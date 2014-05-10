@@ -7,3 +7,19 @@
 * License: GNU General Public License v2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 **/
+
+/* reset */
+
+
+/* global */
+* { -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* pages */
+
+
+/* slides */
+.slide { position:absolute; top:0; left:0; height:100%; width:100%; padding: 20px; }
+.navigation { position:absolute; bottom:10px; z-index:1000; cursor: pointer; }
+  #next { right: 10px; }
+  #previous { left: 10px; }
+#counter { position:absolute; top:10px; right:10px; display: inline-block; }
