@@ -1,5 +1,8 @@
 jQuery(document).ready(function($){
 
+  // init highlightjs syntax highlighting
+  hljs.initHighlightingOnLoad();
+  
   var ID = {
         slideshow : 'simpleslides',
         slide : 'slide',
