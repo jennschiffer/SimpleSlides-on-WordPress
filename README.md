@@ -22,14 +22,12 @@ SimpleSlides is distributed under the terms of the GNU GPL
 
 ### TODO
 
-* custom slide style
-* better homepage style
-  - custom menu (home / about / videos (page))
-* persistent custom fields
+* persistent custom fields (post meta boxes)
+
 * transitions
   - fade speed
-  - div sliding
-* documentation
+  - other animation
+
+* better documentation
   - keyboard shortcuts
   - hiding counter, arrows
-* keyboard shortcut to get back to home and show slide info?
