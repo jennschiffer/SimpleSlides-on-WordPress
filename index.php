@@ -6,7 +6,9 @@
       <h4><?php bloginfo('description'); ?></h4>
     </header>
 
-    <?php wp_nav_menu( array( 'theme_location' => 'simpleslides-menu' ) ); ?>
+    <nav>
+      <?php wp_nav_menu( array( 'theme_location' => 'simpleslides-menu' ) ); ?>
+    </nav>
 
     <div class="page-content">
       <?php if ( have_posts() ): ?>

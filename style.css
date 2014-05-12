@@ -10,7 +10,7 @@
 
 /* global */
 * { -moz-box-sizing: border-box; box-sizing: border-box; }
-a { text-decoration: none; }
+a { text-decoration: none; color: blue; }
 pre {
   white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
@@ -32,6 +32,10 @@ body.page {
   margin: 20px auto; 
 }
 
+.page-content {
+  margin-bottom: 50px;
+}
+
 header {
   text-align: center;
   font-size: 2em;
@@ -48,24 +52,24 @@ header h1 a {
   color: #000;
 }
 
-ul.menu {
+nav ul {
   text-align: center;
   margin: 20px 0 40px;
   padding: 0;
   font-size: 1.5em;
 }
 
-ul.menu li {
+nav ul li {
   display: inline-block; 
 }
 
-ul.menu li a {
+nav ul li a {
   padding: 5px 10px;
   color: #000;
   margin: 0 5px; 
 }
 
-ul.menu li a:hover {
+nav ul li a:hover {
   background: #666;
   color: #fff;
 }
@@ -77,14 +81,14 @@ ul.menu li a:hover {
   padding: 0;
 }
 
-.page-content article a {
+body.home .page-content article a {
   padding: 10px; 
   margin: 10px;
   display: block;
   background-color: #efefef;
 }
 
-.page-content article a:hover {
+body.home .page-content article a:hover {
   background-color: #ccc;
 }
 
@@ -92,6 +96,13 @@ ul.menu li a:hover {
   color: blue;
   font-size: 2em; 
   margin: 0;
+}
+
+body.page .page-content .title {
+  color: #fff;
+  background: #000;
+  padding: 5px 10px;
+  font-weight: normal;
 }
 
 .page-content .excerpt > p {
@@ -118,7 +129,7 @@ footer {
 .navigation { 
   position:absolute; 
   bottom:10px; 
-  z-index:1000; 
+  z-index:999999999999999999999999999999; /* friggin infinity */ 
   cursor: pointer; 
 }
   #next { 
