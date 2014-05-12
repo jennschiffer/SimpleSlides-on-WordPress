@@ -9,4 +9,10 @@ function simpleslides_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'simpleslides_scripts' );
 
+// navigation menu
+function simpleslides_menu() {
+  register_nav_menu('simpleslides-menu',__( 'Main Menu' ));
+}
+add_action( 'init', 'simpleslides_menu' );
+
 ?>

@@ -10,15 +10,22 @@
 
 /* global */
 * { -moz-box-sizing: border-box; box-sizing: border-box; }
-a { color: blue; text-decoration: none; }
+a { text-decoration: none; }
+pre {
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 
 /* home and pages */
 body.home, 
 body.page { 
-  font-family: monospace;
+  font-family: Garamond, 'Times New Roman', serif;
   margin: 0;
-  border-top: 10px solid orange; 
+  border-top: 10px solid #666; 
 }
+
 .page-container { 
   width: 100%;
   max-width: 600px; 
@@ -28,10 +35,73 @@ body.page {
 header {
   text-align: center;
   font-size: 2em;
+  margin: 10px 0; 
+}
+
+header h1,
+header h4 {
+  margin: 0;
+  color: #666;
+}
+
+header h1 a {
+  color: #000;
+}
+
+ul.menu {
+  text-align: center;
+  margin: 20px 0 40px;
+  padding: 0;
+  font-size: 1.5em;
+}
+
+ul.menu li {
+  display: inline-block; 
+}
+
+ul.menu li a {
+  padding: 5px 10px;
+  color: #000;
+  margin: 0 5px; 
+}
+
+ul.menu li a:hover {
+  background: #666;
+  color: #fff;
+}
+
+.page-content ol,
+.page-content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-content article a {
+  padding: 10px; 
+  margin: 10px;
+  display: block;
+  background-color: #efefef;
+}
+
+.page-content article a:hover {
+  background-color: #ccc;
+}
+
+.page-content .title {
+  color: blue;
+  font-size: 2em; 
+  margin: 0;
+}
+
+.page-content .excerpt > p {
+  color: black;
+  margin-bottom: 0;
 }
 
 footer { 
-  font-size: .8em; 
+  margin: 20px;
+  font-size: .9em; 
   text-align: center;
 }
 

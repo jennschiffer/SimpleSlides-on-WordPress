@@ -19,3 +19,17 @@ A WordPress theme for developing and showcasing your slide decks.
 
 SimpleSlides WordPress Theme, Copyright 2014 Jenn Schiffer
 SimpleSlides is distributed under the terms of the GNU GPL
+
+### TODO
+
+* custom slide style
+* better homepage style
+  - custom menu (home / about / videos (page))
+* persistent custom fields
+* transitions
+  - fade speed
+  - div sliding
+* documentation
+  - keyboard shortcuts
+  - hiding counter, arrows
+* keyboard shortcut to get back to home and show slide info?
