@@ -20,7 +20,7 @@ pre {
 /* home and pages */
 body.home, 
 body.page { 
-  font-family: Garamond, 'Times New Roman', serif;
+  font-family: 'Garamond', 'Times New Roman', serif;
   margin: 0;
   border-top: 10px solid #666; 
 }
@@ -114,7 +114,7 @@ body.page .page-content .title {
 }
 
 .page-content .excerpt > p {
-  color: black;
+  color: #000;
   margin-bottom: 0;
 }
 
@@ -127,28 +127,30 @@ footer {
 
 /* simpleslides - editing below may lead to destruction */
 .slide { 
-  position:absolute; 
-  top:0; 
-  left:0; 
-  height:100%; 
-  width:100%; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  height: 100%; 
+  width: 100%; 
   padding: 20px; 
 }
-.navigation { 
-  position:absolute; 
-  bottom:10px; 
-  z-index:999999999999999999999999999999; /* friggin infinity */ 
+
+#navigation { 
+  position: absolute; 
+  bottom: 10px;
+  right: 10px;
+  z-index: 8675309;
   cursor: pointer; 
 }
-  #next { 
-    right: 10px; 
-  }
-  #previous { 
-    left: 10px; 
-  }
+
+#navigation div {
+  display: inline-block;
+  margin: 10px;
+}
+
 #counter { 
-  position:absolute; 
-  top:10px; 
-  right:10px; 
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
   display: inline-block; 
 }

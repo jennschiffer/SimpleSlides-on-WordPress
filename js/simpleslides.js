@@ -19,6 +19,7 @@ jQuery(document).ready(function($){
       };
   
   var $slideshow = $('#' + ID.slideshow),
+      $navigation = $('<div>').attr('id','navigation'),
       $slides = $slideshow.children('div').addClass(ID.slide),
       $currentSlide,
       $firstSlide = $slides.first(),
@@ -28,8 +29,9 @@ jQuery(document).ready(function($){
   $slideshow.children().not('div').remove();
   
   // add navigational arrows and counter
-  $slideshow.append($('<div>').attr('id',ID.next).addClass(ID.navigation).html(labels.next));
-  $slideshow.append($('<div>').attr('id',ID.previous).addClass(ID.navigation).html(labels.previous));
+  $navigation.append($('<div>').attr('id',ID.previous).html(labels.previous));
+  $navigation.append($('<div>').attr('id',ID.next).html(labels.next));
+  $slideshow.append($navigation);
   $slideshow.append($('<div>').attr('id',ID.counter));
   
   var $counter = $('#'+ID.counter),
