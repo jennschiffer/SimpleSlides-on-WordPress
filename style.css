@@ -10,7 +10,6 @@
 
 /* global */
 * { -moz-box-sizing: border-box; box-sizing: border-box; }
-a { text-decoration: none; color: blue; }
 pre {
   white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
@@ -24,6 +23,12 @@ body.page {
   font-family: Garamond, 'Times New Roman', serif;
   margin: 0;
   border-top: 10px solid #666; 
+}
+
+body.home blockquote,
+body.page blockquote {
+  padding-left: 10px;
+  border-left: 3px solid #000;
 }
 
 .page-container { 
@@ -50,6 +55,7 @@ header h4 {
 
 header h1 a {
   color: #000;
+  text-decoration: none;
 }
 
 nav ul {
@@ -67,10 +73,11 @@ nav ul li a {
   padding: 5px 10px;
   color: #000;
   margin: 0 5px; 
+  text-decoration: none;
 }
 
 nav ul li a:hover {
-  background: #666;
+  background-color: #666;
   color: #fff;
 }
 
@@ -86,6 +93,7 @@ body.home .page-content article a {
   margin: 10px;
   display: block;
   background-color: #efefef;
+  text-decoration: none;
 }
 
 body.home .page-content article a:hover {
@@ -93,14 +101,14 @@ body.home .page-content article a:hover {
 }
 
 .page-content .title {
-  color: blue;
+  color: #000;
   font-size: 2em; 
   margin: 0;
 }
 
 body.page .page-content .title {
   color: #fff;
-  background: #000;
+  background-color: #333;
   padding: 5px 10px;
   font-weight: normal;
 }
