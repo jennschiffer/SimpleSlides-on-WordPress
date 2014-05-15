@@ -1,12 +1,16 @@
-<?php get_header(); ?>
+<?php 
+/**
+* SimpleSlides
+* @author Jenn Schiffer
+*/
+
+get_header(); ?>
 
   <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-  <!-- highlightjs style -->
-  <!-- custom style -->
   <?php 
     $theId = get_the_ID();
-    $simpleslidesCSS = get_post_meta($theId, 'SimpleSlides CSS', true);
-    $highlightTheme = get_post_meta($theId, 'SimpleSlides HighlightJS CSS', true);
+    $simpleslidesCSS = get_post_meta($theId, '_simpleslides_customCSS', true);
+    $highlightTheme = get_post_meta($theId, '_simpleslides_highlightJSTheme', true);
 
     // highlightjs theme
     if ( !$highlightTheme ) {
@@ -21,9 +25,7 @@
   ?>
 
     <article id="simpleslides">
-      <?php the_content(); 
-        // TODO: hidden tab to display more info about the talk ?
-      ?> 
+      <?php the_content(); ?> 
     </article>
   <?php endwhile; ?>
 

@@ -15,11 +15,11 @@ A WordPress theme for developing and showcasing your slide decks.
 2. Title and Excerpt-meta-box content will show on home page.
 3. In post content, wrap your individual slide content with `<div>` and `</div>` tags, which will automagically be turned into slides.
 
-### Custom Meta Boxes
+### Custom Settings Meta Box
 
-* **SimpleSlides CSS** - enter straight-up CSS for your slide deck's custom style -- ex. `body { font-family: monospace; }`
+* **Custom CSS** - enter straight-up CSS for your slide deck's custom style -- ex. `body { font-family: monospace; }`
 
-* **SimpleSlides HighlightJS CSS** - enter the theme's css file name, leaving blank defaults to `default` -- ex. `solarized_dark` uses the `css/highlightjs/solarized_dark.css` stylesheet.
+* **HighlightJS Theme** - select the theme for HighlightJS syntax highlighting. Defaults to `default`, go figure.
 
 ### CSS Tricks
 
@@ -29,12 +29,10 @@ A WordPress theme for developing and showcasing your slide decks.
 ### SimpleSlides License
 
 SimpleSlides WordPress Theme, Copyright 2014 Jenn Schiffer
+
 SimpleSlides is distributed under the terms of the GNU GPL
 
-### TODO
+### Future Updates
 
-* persistent custom fields (post meta boxes)
-* meta box for highlight js - select dropdown?
 * transitions
-  - fade speed
-  - other animation
+* get some sleep maybe

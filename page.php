@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php 
+/**
+* SimpleSlides
+* @author Jenn Schiffer
+*/
+
+get_header(); ?>
 
   <div class="page-container">
     <header>

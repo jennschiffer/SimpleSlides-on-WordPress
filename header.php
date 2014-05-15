@@ -1,3 +1,9 @@
+<?php
+/**
+* SimpleSlides
+* @author Jenn Schiffer
+*/
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
