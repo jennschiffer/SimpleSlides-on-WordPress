@@ -24,7 +24,6 @@ A WordPress theme for developing and showcasing your slide decks.
 
 ### Future Updates
 * how-to post on demo site
-* finish listing highlightjs themes
 * transitions
 * get some sleep maybe lol ok
 
