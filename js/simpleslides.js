@@ -25,6 +25,9 @@ jQuery(document).ready(function($){
       $firstSlide = $slides.first(),
       $lastSlide = $slides.last();
 
+  // make sure the last slide doesn't page break while printing.
+  $('head').append( '<style> .slide:nth-child(' + $slides.length + ') { page-break-after: auto }</style>' );
+
   // remove non-div children (like html comments which wp wraps in <p> tags)
   $slideshow.children().not('div').remove();
   
