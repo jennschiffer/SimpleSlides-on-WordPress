@@ -24,9 +24,11 @@ get_header(); ?>
               <article>
                 <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
                   <h2 class="title"><?php the_title(); ?></h2>
-                  <div class="excerpt">
-                    <?php the_excerpt(); ?>
-                  </div>
+                  <?php if ( has_excerpt() ) { ?>
+                    <div class="excerpt">
+                      <?php the_excerpt(); ?>
+                    </div>
+                  <?php } ?>
                 </a>
               </article>
             </li>
