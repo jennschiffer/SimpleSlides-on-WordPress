@@ -17,6 +17,7 @@ pre {
   word-wrap: break-word;
 }
 
+
 /* home and pages */
 body.home, 
 body.page { 
@@ -125,7 +126,7 @@ footer {
 }
 
 
-/* simpleslides - editing below may lead to destruction */
+/* simpleslides generation - editing below may lead to destruction */
 .slide { 
   position: absolute; 
   top: 0; 

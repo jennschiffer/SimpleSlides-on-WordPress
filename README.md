@@ -12,7 +12,7 @@ A WordPress theme for developing and showcasing your slide decks.
 ### Creating Slides
 1. Create new post
 2. Title and Excerpt-meta-box content will show on home page.
-3. In post content, wrap your individual slide content with `<div>` and `</div>` tags, which will automagically be turned into slides.
+3. In post content, wrap your individual slide content with `<div>` and `</div>` tags, which will automagically be turned into slides. Just the top-level div tags will be slides - you can have divs nested within them which won't become slides.
 
 ### Custom Settings Meta Box
 * **Custom CSS** - enter straight-up CSS for your slide deck's custom style -- ex. `body { font-family: monospace; }`
