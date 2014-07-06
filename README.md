@@ -24,7 +24,9 @@ A WordPress theme for developing and showcasing your slide decks.
 
 ### Future Updates
 * how-to post on demo site
+* slide number query param
 * transitions
+* timer
 * get some sleep maybe lol ok
 
 ### SimpleSlides License

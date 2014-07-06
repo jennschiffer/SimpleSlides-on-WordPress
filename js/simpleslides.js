@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 
   // init highlightjs syntax highlighting
   hljs.initHighlightingOnLoad();
-  
+
   var ID = {
         slideshow : 'simpleslides',
         slide : 'slide',
@@ -46,12 +46,14 @@ jQuery(document).ready(function($){
   
   var updateCounter = function() {
     // updates the counter
-    $counter.text(thisSlidePointer + labels.separator + lastSlidePointer);
+    $counter.text(slidePointer.current + labels.separator + slidePointer.last);
   };
   
   var hideCurrentSlide = function() {
     // hide the current slide
-    $currentSlide.hide().removeClass(ID.current);
+    if ( $currentSlide ) {
+      $currentSlide.hide().removeClass(ID.current);
+    }
   };
   
   var nextSlide = function() {
@@ -62,16 +64,16 @@ jQuery(document).ready(function($){
     var nextSlide = $currentSlide.next();
     
     // not the last slide => go to the next one and increment the counter
-    if ( thisSlidePointer != lastSlidePointer ) {
+    if ( slidePointer.current != slidePointer.last ) {
       nextSlide.show().addClass(ID.current);
       $currentSlide = nextSlide;
-      thisSlidePointer++;
+      slidePointer.current++;
     }
     else {
       // is the last slide => go back to the first slide and reset the counter.
       $firstSlide.show().addClass(ID.current);
       $currentSlide = $firstSlide;
-      thisSlidePointer = 1;
+      slidePointer.current = 1;
     }
     
     // update counter
@@ -83,24 +85,37 @@ jQuery(document).ready(function($){
     hideCurrentSlide();
     
     // get the previous slide
-    var previousSlide = $currentSlide.prev();
+    var prevSlide = $currentSlide.prev();
     
     // If not the first slide, go to the previous one and decrement the counter
-    if ( thisSlidePointer != 1 ) {
-      previousSlide.show().addClass(ID.current);
-      $currentSlide = previousSlide;
-      thisSlidePointer--;
+    if ( slidePointer.current != 1 ) {
+      prevSlide.show().addClass(ID.current);
+      $currentSlide = prevSlide;
+      slidePointer.current--;
     }
     else {
       // This must be the first slide, so go back to the last slide and set the counter.
       $lastSlide.show().addClass(ID.current);
       $currentSlide = $lastSlide;
-      thisSlidePointer = lastSlidePointer;
+      slidePointer.current = slidePointer.last;
     }
     
     // update counter       
     updateCounter();  
   };
+
+  var goToSlide = function(slideNumber) {
+    // hide current slide
+    hideCurrentSlide();
+    moveToSlide = slideNumber-1;
+
+    $currentSlide = $slides.eq(moveToSlide);
+    $currentSlide.show().addClass(ID.current);
+    slidePointer.current = slideNumber;
+
+    // update counter
+    updateCounter();
+  }
   
 
   /*** INIT SLIDESHOW ***/
@@ -108,15 +123,22 @@ jQuery(document).ready(function($){
   // Initially hide all slides
   $slides.hide();
   
-  // The first slide is number first!
-  var thisSlidePointer = 1;
-  
-  // The last slide position is the total number of slides
-  var lastSlidePointer = $slides.length;
-  
-  // The first slide is always the first slide, so make visible and set the counter
-  $currentSlide = $firstSlide.show().addClass(ID.current);
-  updateCounter();
+  // The first slide is number first, last is slides length
+  var slidePointer = {
+    current : 1,
+    last : $slides.length
+  };
+
+  var params = $.deparam.querystring();
+  if ( params.slide && (params.slide > 0 && params.slide <= $slides.length )) {
+    // if slide= query param is given and valid, go to that slide
+    goToSlide(params.slide);
+  }
+  else {
+    // The first slide is the first slide, so make visible and set the counter...
+    $currentSlide = $firstSlide.show().addClass(ID.current);
+    updateCounter();
+  }
   
   
   /*** EVENTS ***/
@@ -135,7 +157,7 @@ jQuery(document).ready(function($){
       return false;
     }
     else if (e.which == 37) {
-        // left key pressed => previous slide
+        // left or l key pressed => previous slide
         previousSlide();
         return false;
       }
