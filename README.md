@@ -5,6 +5,7 @@ A WordPress theme for developing and showcasing your slide decks.
 
 ### Dependencies Built In
 * [simpleslides](http://github.com/jennschiffer/simpleslides) turns your post content to a slide deck
+* [jquery bbq](http://benalman.com/projects/jquery-bbq-plugin/) for query parameters
 * [normalize.css](https://github.com/necolas/normalize.css) as a css reset
 * [highlightjs](https://github.com/isagalaev/highlight.js) for syntax highlighting
 * [jquery](http://jquery.com/) for javascript magic
