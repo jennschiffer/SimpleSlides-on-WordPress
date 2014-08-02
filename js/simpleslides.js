@@ -48,6 +48,17 @@ jQuery(document).ready(function($){
     // updates the counter
     $counter.text(slidePointer.current + labels.separator + slidePointer.last);
   };
+
+  var updateURL = function() {
+    // updates slide state
+    var currentURL = document.location.toString();
+
+    if (currentURL.indexOf('#') != 1){
+      currentURL = currentURL.substr(0,currentURL.indexOf('#'));
+    }
+
+    $.bbq.pushState({ slide: slidePointer.current });
+  };
   
   var hideCurrentSlide = function() {
     // hide the current slide
@@ -78,6 +89,9 @@ jQuery(document).ready(function($){
     
     // update counter
     updateCounter();
+
+    // update url
+    updateURL();
   };
   
   var previousSlide = function() {
@@ -102,6 +116,9 @@ jQuery(document).ready(function($){
     
     // update counter       
     updateCounter();  
+
+    // update URL
+    updateURL();
   };
 
   var goToSlide = function(slideNumber) {
@@ -129,10 +146,11 @@ jQuery(document).ready(function($){
     last : $slides.length
   };
 
-  var params = $.deparam.querystring();
-  if ( params.slide && (params.slide > 0 && params.slide <= $slides.length )) {
-    // if slide= query param is given and valid, go to that slide
-    goToSlide(params.slide);
+  var slideState = parseInt($.bbq.getState('slide'));
+
+  if ( slideState && (slideState > 0 && slideState <= $slides.length )) {
+    // if slide= hash state is given and valid, go to that slide
+    goToSlide(slideState);
   }
   else {
     // The first slide is the first slide, so make visible and set the counter...
@@ -144,10 +162,16 @@ jQuery(document).ready(function($){
   /*** EVENTS ***/
   
   // "next" arrow clicked => next slide
-  $next.click(nextSlide);
+  $next.click( function(e){ 
+    e.preventDefault();
+    nextSlide();
+  });
   
   // "previous" arrow clicked => previous slide
-  $previous.click(previousSlide);
+  $previous.click( function(e){ 
+    e.preventDefault();
+    previousSlide() 
+  });
   
   // Add keyboard shortcuts for changing slides
   $(document).keydown(function(e){
