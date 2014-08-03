@@ -22,7 +22,7 @@ get_header(); ?>
             <?php while ( have_posts() ) : the_post(); ?>
             <li>
               <article>
-                <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
+                <a href="<?php the_permalink(); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
                   <h2 class="title"><?php the_title(); ?></h2>
                   <?php if ( has_excerpt() ) { ?>
                     <div class="excerpt">
