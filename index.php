@@ -8,7 +8,7 @@ get_header(); ?>
 
   <div class="page-container">
     <header>
-      <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+      <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name'); ?></a></h1>
       <h4><?php bloginfo('description'); ?></h4>
     </header>
 
@@ -22,7 +22,7 @@ get_header(); ?>
             <?php while ( have_posts() ) : the_post(); ?>
             <li>
               <article>
-                <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
+                <a href="<?php the_permalink(); ?>" rel="bookmark">
                   <h2 class="title"><?php the_title(); ?></h2>
                   <?php if ( has_excerpt() ) { ?>
                     <div class="excerpt">
